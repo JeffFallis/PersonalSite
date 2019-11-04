@@ -1,14 +1,16 @@
-var player1Num = rollDice(1);
-var player2Num = rollDice(2);
+document.querySelector("#roller").addEventListener("click", rollBothDice);
 
-// alert("Player1Num: " + player1Num + " Player2Num: " + player2Num);
-
-if (player1Num > player2Num) {
-    document.querySelector("h1").textContent = "Player 1 Wins";
-} else if (player2Num > player1Num) {
-    document.querySelector("h1").textContent = "Player 2 Wins";
-} else if (player2Num === player1Num) {
-    document.querySelector("h1").textContent = "Tie";
+function rollBothDice() {
+    var player1Num = rollDice(1);
+    var player2Num = rollDice(2);
+    
+    if (player1Num > player2Num) {
+        document.querySelector("h1").textContent = "Player 1 Wins";
+    } else if (player2Num > player1Num) {
+        document.querySelector("h1").textContent = "Player 2 Wins";
+    } else if (player2Num === player1Num) {
+        document.querySelector("h1").textContent = "Tie";
+    }
 }
 
 function rollDice(diceNum) {
